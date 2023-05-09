@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+
+<body
+    style="color: white;font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: 500; background-color: black;">
+    <table border="1" cellpadding="5">
+        <tr>
+            <td style="border: 2px solid white; background-color: goldenrod; outline:none !important;">GR ID</td>
+            <td style="border: 2px solid white; background-color: goldenrod; outline:none !important;">Name</td>
+            <td style="border: 2px solid white; background-color: goldenrod; outline:none !important;">Email Id</td>
+            <td style="border: 2px solid white; background-color: goldenrod; outline:none !important;">Course</td>
+        </tr>
+        <tbody id="imformation"></tbody>
+    </table>
+    <script type="text/javascript">
+        var row1 = [2156, "Vatsal Panchani", "vatsalpanchani4@gmail.com", "Front end developments"];
+        var row2 = [2157, "Kenil Panchani", "kenilpanchani4@gmail.com", "Full strck developments"];
+        var row3 = [2158, "Sahaj Panchani", "sahajpanchani4@gmail.com", "Graphics designer"];
+        var row4 = [2159, "Meet Togadiya", "meettogadiya4@gmail.com", "Ui-xi designer"];
+        var row5 = [2160, "Om Malaviya", "ommalaviya456@gmail.com", "Back end developments"];
+
+        var collectiondata = [row1, row2, row3, row4, row5];
+        var datafile = "";
+        // for (var i in collectiondata) {
+        //     datafile += `
+        //         <tr>
+        //         <td>${collectiondata[i][0]}</td> 
+        //         <td>${collectiondata[i][1]}</td> 
+        //         <td>${collectiondata[i][2]}</td> 
+        //         <td>${collectiondata[i][3]}</td> 
+        //         </tr>
+        //         `
+        // }
+        var find = prompt("Enter your data ").toLowerCase();
+        for (var i = 0; i < collectiondata.length; i++) {
+            for (var j = 0; j < collectiondata.length; j++) {
+                if (find == collectiondata[i][j]) {
+                    datafile += `
+                    <tr>
+                        <td>${collectiondata[i][0]}</td> 
+                        <td>${collectiondata[i][1]}</td> 
+                        <td>${collectiondata[i][2]}</td> 
+                        <td>${collectiondata[i][3]}</td> 
+                   </tr>
+                    `
+                }
+            }
+        }
+
+        for (var i in datafile) {
+            document.getElementById('imformation').innerHTML = datafile;
+        }
+    </script>
+
+</body>
+
+</html>
